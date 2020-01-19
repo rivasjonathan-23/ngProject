@@ -1,0 +1,7 @@
+<div class="holder" [class.active]="focus === 1">
+  <label [class.filled]='fname.value'>Firstname</label>
+  <div class="border">
+    <input type="text" autocomplete="off" ngModel name="fname" #fname="ngModel" (focus)="focus = 1"
+      (focusout)="focus = 0">
+  </div>
+</div>

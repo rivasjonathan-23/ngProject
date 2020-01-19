@@ -1,0 +1,92 @@
+.outercont {
+  margin: 10px;
+  padding: 0;
+  // box-shadow: 0 0 4px lightgrey,
+  //   0 2px 3px grey;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+
+.innercont {
+  margin: 0;
+  padding: 10px;
+}
+
+.divhead {
+  padding: 10px;
+  background: white;
+  // background: rgb(235, 250, 255);
+  color: black;
+  opacity: 0.8;
+}
+
+
+
+
+table {
+  margin: 0;
+
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+
+  tr {
+    border-bottom: 1px solid rgb(247, 247, 247);
+    transition: .2s;
+  }
+
+  tr:hover {
+    filter: brightness(95%);
+  }
+
+  th {
+    font-weight: normal;
+    padding: 7px 10px;
+    opacity: 0.8;
+    background: white;
+
+    // background: rgb(235, 250, 255);
+    color: black;
+
+  }
+
+
+  td {
+    font-size: 14px;
+    padding: 7px 10px;
+    background: white;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  box-sizing: border-box !important;
+}
+
+button {
+  padding: 3px 7px;
+  box-shadow: 0 0 4px lightgrey,
+    0 1px 2px rgb(88, 88, 88);
+  border: none;
+  border-radius: 3px;
+  margin: 2px;
+  transition: .2s;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  box-shadow: 0 0 6px lightgrey,
+    0 3px 4px rgb(43, 42, 42);
+}
+
+button:active {
+  box-shadow: 0 0 4px lightgrey,
+    0 1px 2px grey;
+}

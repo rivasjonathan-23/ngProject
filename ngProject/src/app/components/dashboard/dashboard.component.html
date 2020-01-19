@@ -1,0 +1,24 @@
+<div class="outercont">
+  <div class="divhead">Info list</div>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let item of record">
+      <td>{{item.firstname}}</td>
+      <td>{{item.lastname}}</td>
+      <td>{{item.Email}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.age}}</td>
+      <td>
+        <button (click)="edit(item)">Edit</button>
+        <button (click)="edit(item)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,90 @@
+<div class="outercont">
+  <img class="backdrop" src="assets/background.jpeg">
+  <div class="overlay"></div>
+  <!-- <div class="divhead">
+    Parent component
+  </div> -->
+  <div class="innercont" [ngClass]="{block: blockStyle}">
+    <div class="formholder">
+      <form [formGroup]="myForm" (submit)="submit(myForm)">
+        <div class="divhead formh">Registration form
+          <!-- <div class="fhead"></div> -->
+        </div>
+
+        <div class="innerformcont">
+          <div class="pairholder">
+            <div class="holder" [ngClass]="{active:focus === 1, error: validate('firstname', ['required', 'pattern'])}">
+              <label [class.filled]='myForm.controls.firstname.value'>Firstname</label>
+              <div class="border">
+                <input type="text" autocomplete="off" formControlName="firstname" (focus)="focus = 1"
+                  (focusout)="focus = 0">
+              </div>
+              <span class="errorMessage">
+                <span *ngIf="myForm.get('firstname').hasError('required')">This field is required!</span>
+                <span *ngIf="myForm.get('firstname').hasError('pattern')">Invalid input!</span>
+              </span>
+            </div>
+            <div class="holder" [ngClass]="{active:focus === 2, error: validate('lastname', ['required', 'pattern'])}">
+              <label [class.filled]='myForm.controls.lastname.value'>Lastname</label>
+              <div class="border">
+                <input type="text" autocomplete="off" formControlName="lastname" (focus)="focus = 2"
+                  (focusout)="focus = 0">
+              </div>
+              <span class="errorMessage">
+                <span *ngIf="myForm.get('lastname').hasError('required')">This field is required!</span>
+                <span *ngIf="myForm.get('lastname').hasError('pattern')">Invalid input!</span>
+              </span>
+            </div>
+          </div><br>
+          <div class="pairholder">
+            <div class="holder" [ngClass]="{active: focus === 3, error: validate('Email', ['required', 'pattern'])}">
+              <label [class.filled]='myForm.controls.Email.value'>Email</label>
+              <div class="border">
+                <input type="text" autocomplete="off" [email]="true" formControlName="Email" (focus)="focus = 3"
+                  (focusout)="focus = 0">
+              </div>
+              <span class="errorMessage">
+                <span *ngIf="myForm.get('Email').hasError('required')">This field is required!</span>
+                <span *ngIf="myForm.get('Email').hasError('pattern')">Invalid email!</span>
+              </span>
+            </div>
+            <div class="holder" [ngClass]="{active:focus === 4, error: validate('gender', ['required'])}">
+              <label [class.filled]='myForm.controls.gender.value'>Gender</label>
+              <div class="border">
+                <select type="text" autocomplete="off" formControlName="gender" (focus)="focus = 4"
+                  (focusout)="focus = 0">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <span class="errorMessage">Required!</span>
+            </div>
+            <div class="holder ageholder" [ngClass]="{active:focus === 5, error: validate('age', ['required'])}">
+              <label [class.filled]='myForm.controls.age.value'>Age</label>
+              <div class="border">
+                <input type="number" min="1" class="ageinput" formControlName="age" autocomplete="off"
+                  (focus)="focus = 5" (focusout)="focus = 0">
+              </div>
+              <span class="errorMessage">Required!</span>
+            </div>
+          </div>
+          <br>
+          <div class="buttonholder">
+            <span [hidden]="!myForm.invalid">Fill all fields to enable submit</span>
+            <!-- [class.nohover]="myForm.invalid" [disabled]="myForm.invalid" -->
+            <button class="primary" type="submit">
+
+              Submit</button>
+          </div>
+        </div>
+      </form>
+
+
+    </div>
+    <app-dashboard [record]="record" (editInfo)="Edit($event)"></app-dashboard>
+  </div>
+  <div class="divfoot">
+    <button (click)="blockStyle = !blockStyle">Change style</button>
+  </div>
+
+</div>
