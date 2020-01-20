@@ -12,7 +12,12 @@ export class RegistrationComponent implements OnInit {
   focus: number;
   record: Array<Info>;
   valid: number;
+  id: number = 0;
+  hide: any = false;
+  count: number;
+  unsave: any = false;
 
+  temp: Array<Info>;
   constructor(private fb: FormBuilder) {
     this.record = new Array<Info>();
   }
@@ -21,17 +26,60 @@ export class RegistrationComponent implements OnInit {
     this.reset(new Info());
   }
 
-  submit(form) {
+  async submit(form) {
+    this.hide = true;
+    if (form.value.id === null) {
+      form.value.id = this.id += 1;
+    }
     this.record.push(form.value);
-    this.reset(new Info());
+
+    this.temp = new Array<Info>();
+    for (var i = 0; i < this.record.length; ++i) {
+      this.record.forEach(item => {
+        if (item.id === i + 1) {
+          this.temp.push(item);
+        }
+      });
+    }
+    this.record = this.temp;
+    this.myForm.reset();
+    this.hide = await this.timer();
   }
 
-  Edit(Form) {
-    this.reset(Form);
+  async Edit(Form) {
+    if (
+      this.myForm.value.id !== null ||
+      (this.myForm.touched && this.myForm.dirty)
+    ) {
+      // alert("You have unsave changes!");
+      this.unsave = true;
+      this.unsave = await this.timer();
+    } else {
+      this.reset(Form);
+      this.record = this.record.filter(info => {
+        if (info !== Form) {
+          return info;
+        }
+      });
+    }
+  }
+
+  timer() {
+    return new Promise((resolve, reject) => {
+      var count = 1;
+      var time = setInterval(function() {
+        count += 1;
+        if (count === 3) {
+          clearInterval(time);
+          resolve(false);
+        }
+      }, 2000);
+    });
   }
 
   reset(val) {
     this.myForm = this.fb.group({
+      id: [val.id, ""],
       firstname: [
         val.firstname,
         [Validators.required, Validators.pattern("[a-zA-Z ]*")]

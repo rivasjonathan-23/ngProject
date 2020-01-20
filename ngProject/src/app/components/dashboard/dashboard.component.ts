@@ -9,6 +9,7 @@ import { Info } from "../info";
 export class DashboardComponent implements OnInit {
   @Input() record: Array<Info>;
   temp: Array<Info>;
+  hidden: boolean;
   @Output() editInfo = new EventEmitter();
   constructor() {
     this.record = new Array<Info>();
@@ -18,9 +19,5 @@ export class DashboardComponent implements OnInit {
 
   edit(info) {
     this.editInfo.emit(info);
-    const index: number = this.record.indexOf(info);
-    if (index !== -1) {
-      this.record.splice(index, 1);
-    }
   }
 }

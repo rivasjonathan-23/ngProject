@@ -1,11 +1,17 @@
 <div class="outercont">
   <img class="backdrop" src="assets/background.jpeg">
   <div class="overlay"></div>
-  <!-- <div class="divhead">
-    Parent component
-  </div> -->
+  <div class="divhead nice">
+    <p>Angular Project <span>No. 1</span></p>
+
+  </div>
+
   <div class="innercont" [ngClass]="{block: blockStyle}">
-    <div class="formholder">
+    <div class="formholder child">
+      <div [class.show]="hide" class="notification">
+        Information successfully submitted
+        <span (click)="hide = false">x</span>
+      </div>
       <form [formGroup]="myForm" (submit)="submit(myForm)">
         <div class="divhead formh">Registration form
           <!-- <div class="fhead"></div> -->
@@ -71,8 +77,8 @@
           <br>
           <div class="buttonholder">
             <span [hidden]="!myForm.invalid">Fill all fields to enable submit</span>
-            <!-- [class.nohover]="myForm.invalid" [disabled]="myForm.invalid" -->
-            <button class="primary" type="submit">
+            <!--  -->
+            <button class="primary" [class.nohover]="myForm.invalid" [disabled]="myForm.invalid" type="submit">
 
               Submit</button>
           </div>
@@ -81,10 +87,17 @@
 
 
     </div>
-    <app-dashboard [record]="record" (editInfo)="Edit($event)"></app-dashboard>
+    <div class="child">
+      <div class="notification errorAlert" [class.show]="unsave">You have unsave changes! <span
+          (click)="unsave = false">x</span>
+      </div>
+      <app-dashboard [record]="record" (editInfo)="Edit($event)">
+
+      </app-dashboard>
+    </div>
   </div>
   <div class="divfoot">
-    <button (click)="blockStyle = !blockStyle">Change style</button>
+    <button (click)="blockStyle = !blockStyle" class="noShadow">Change style</button>
   </div>
 
 </div>

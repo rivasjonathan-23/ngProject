@@ -1,13 +1,61 @@
 .outercont {
-  margin: 10px;
-  padding: 20px;
+  margin: 50px 20px;
+  padding: 0;
   border-radius: 2px;
-  box-shadow: 0 0 2px lightgrey, 0 2px 3px grey;
+  box-shadow: 0 0 2px rgb(122, 121, 121), 0 2px 3px rgb(66, 66, 66);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 30px;
 
   transition: 0.2s;
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
+}
+
+.notification {
+  position: absolute;
+  visibility: hidden;
+  padding: 10px 0px;
+  text-align: center;
+  top: 10%;
+  left: 10%;
+  width: 0;
+  z-index: 1;
+  color: rgb(31, 93, 155);
+  box-shadow: 0px 2px 5px grey;
+  border-radius: 2px;
+  // visibility: hidden;
+  background: #cbfcdf;
+  color: rgb(11, 77, 11);
+  transition: 0.3s;
+  overflow: hidden;
+  height: 40px;
+
+  span {
+    position: absolute;
+    padding: 0px 5px;
+    border-radius: 20px;
+
+    top: -4px;
+    // background: white;
+    right: 0px;
+    z-index: 1;
+    opacity: 0.6;
+  }
+
+  span:hover {
+    opacity: 1;
+  }
+
+}
+
+.errorAlert {
+  background: rgb(255, 222, 222);
+  color: rgb(175, 2, 2);
+}
+
+.show {
+  visibility: visible;
+  width: 300px;
 }
 
 .backdrop {
@@ -17,10 +65,9 @@
   background-attachment: cover;
   width: 100%;
   // opacity: 0.6;
-  height: auto;
+  height: 100%;
   z-index: -1;
 }
-
 
 .overlay {
   position: absolute;
@@ -29,9 +76,13 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.5;
+  // opacity: 0.5; 
   left: 0;
-  background-image: linear-gradient(to right bottom, #3333ff, #66ff99);
+  background-image: linear-gradient(to right, transparent, transparent, rgb(250, 252, 251, 0.8), rgb(250, 252, 251), white);
+}
+
+.child {
+  position: relative;
 }
 
 // .outercont:hover {
@@ -39,36 +90,40 @@
 // }
 
 .innercont {
+  margin: 20px;
   margin: 0;
-  padding: 10px;
+  padding: 30px;
+  margin-bottom: 0;
+  box-sizing: border-box;
   display: grid;
   z-index: 1;
   grid-template-columns: 50% 50%;
-
 }
 
 
+@media only screen and (max-width: 1000px) {
+  .innercont {
+    display: unset;
+    margin: 50px 10px !important;
+  }
+}
 
 .formholder {
   display: inline-block;
+
   box-sizing: border-box;
   //   border: 1px solid lightgrey;
 }
 
-
-
 .block {
   display: unset;
-  padding: 10px !important;
+  margin: 50px 10px !important;
 }
 
 .divfoot {
-  padding: 10px 20px;
+  padding-top: 0;
+  padding: 20px 40px;
 }
-
-
-
-
 
 .holder {
   margin: 10px 5px;
@@ -99,6 +154,7 @@
   }
 }
 
+
 label {
   display: block;
   position: absolute;
@@ -112,6 +168,8 @@ input {
   padding: 9px 16px;
   // display: block;
   // width: 100%;
+  background: white;
+
   font-size: 15px;
   box-sizing: border-box;
   border-radius: 3px;
@@ -130,6 +188,39 @@ select {
   box-sizing: border-box;
   border-radius: 3px;
   border: none;
+}
+
+
+.nice {
+  color: rgb(38, 110, 204) !important;
+  position: absolute !important;
+  top: -25px;
+  z-index: 1;
+  left: 40px;
+  box-shadow: 0 2px 5px rgb(51, 51, 51);
+  // width: 100%;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  // font-weight: lighter;
+  font-size: 19px !important;
+  // opacity: 0.8;
+  background-image: unset !important;
+  background: white;
+  // background: rgb(101, 168, 235) !important;
+  text-shadow: unset !important;
+
+  p {
+    margin: 0px 2px;
+
+    span {
+      color: white;
+      background: rgb(33, 120, 207);
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgb(87, 86, 86);
+    }
+  }
 }
 
 select:focus {
@@ -156,8 +247,8 @@ select:focus {
   }
 
   .border {
-    background-image: linear-gradient(to right, blue, #f705eb);
-    box-shadow: 2px 0px 4px #fcbedb, -2px 0px 4px rgba(107, 107, 255, 0.39);
+    background-image: linear-gradient(to right, blue, #00ca54);
+    box-shadow: 2px 0px 4px #bef8d5, -2px 0px 4px rgba(107, 107, 255, 0.39);
   }
 
   .errorMessage {
@@ -165,15 +256,14 @@ select:focus {
   }
 }
 
-
 .error {
   label {
     color: rgb(194, 2, 2);
   }
 
   .border {
-    background-image: linear-gradient(to right, rgb(245, 1, 1), #fcba03);
-    box-shadow: 2px 0px 4px #fcbedb, -2px 0px 4px rgba(255, 237, 188, 0.39);
+    background-image: linear-gradient(to right, rgb(245, 1, 1), #ff00aa);
+    box-shadow: 2px 0px 4px #ffb5e6, -2px 0px 4px rgba(255, 207, 188);
   }
 
   input {
@@ -183,7 +273,7 @@ select:focus {
   .errorMessage {
     visibility: visible;
     color: rgb(175, 2, 2);
-    transition: ease .4s;
+    transition: ease 0.4s;
     left: 15px;
     opacity: 1;
   }
@@ -193,35 +283,43 @@ form {
   overflow: hidden;
   margin: 10px;
   padding: 0;
-  background-image: linear-gradient(to right, rgb(206, 206, 255), #fad5f7);
+
+  // background-image: linear-gradient(to right, rgb(206, 206, 255, 0.6), #fad5f7);
   border-radius: 3px;
-  // box-shadow: 0 0 4px lightgrey, 0 2px 3px grey;
+  // box-shadow: 0 0 4px rgb(136, 136, 136), 0 2px 3px rgb(58, 57, 57);
+  border: 1px solid rgb(130, 191, 231); // box-shadow: 0 0 4px rgb(136, 136, 136), 0 2px 3px rgb(58, 57, 57);
   // border: 1px solid lightgrey;
   box-sizing: border-box;
   display: inline-block;
-
 }
 
 .innerformcont {
   margin: 0;
-  padding-top: 20px;
+  padding-top: 10px;
   background: white;
+  // background-image: linear-gradient(rgb(255, 255, 255, 0.9), white, white);
   z-index: 9999;
   // margin-right: 10px;
   // border-top-right-radius: 60px;
   padding: 15px 30px;
 
-  padding-right: 50px;
 }
 
-
 .divhead {
-  font-size: 18px;
+  font-size: 19px;
   position: relative;
-  font-weight: #fde1fb;
-  background-image: linear-gradient(to right, rgb(206, 206, 255), #fad5f7);
+  // border-top: 1px solid white;
+  // border-left: 1px solid white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 1px solid transparent;
+  border-right: none;
+  // font-weight: #fde1fb;
+  background-image: linear-gradient(to right, rgb(81, 156, 218, 0.9), rgb(215, 252, 238, 0.9));
   padding: 10px 30px;
-  color: rgb(4, 29, 172);
+  text-shadow: 0px 0px 5px rgb(3, 50, 88);
+  color: white;
+  // color: rgb(7, 58, 116);
 }
 
 .fhead {
@@ -256,7 +354,6 @@ form {
   box-shadow: 0 3px 17px lightgrey, 0 5px 7px rgb(66, 66, 66);
 }
 
-
 button {
   padding: 10px 15px;
   margin: 5px 5px;
@@ -264,38 +361,31 @@ button {
   color: rgb(65, 64, 64);
   border: none;
   box-shadow: 0 0 4px lightgrey, 0 1px 2px rgb(88, 88, 88);
-  transition: .2s;
+  transition: 0.2s;
   position: relative;
 }
-
-
 
 button:focus {
   outline: none;
 }
 
 button:hover {
-  box-shadow: 0 0 8px lightgrey,
-    0 3px 4px rgb(71, 71, 71);
+  box-shadow: 0 0 8px lightgrey, 0 3px 4px rgb(71, 71, 71);
 }
 
 button:active {
-  box-shadow: 0 0 4px lightgrey,
-    0 1px 2px grey;
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
 }
-
 
 .primary {
   color: white;
   background: #3e5de9;
 }
 
-
 .danger {
   color: white;
   background: #e2048d;
 }
-
 
 .pairholder {
   display: inline-block;
@@ -305,7 +395,6 @@ button:active {
 
 .ageholder {
   width: 110px;
-
 }
 
 .ageinput {
@@ -313,32 +402,37 @@ button:active {
   width: 100%;
 }
 
-
 .buttonholder {
   margin: 15px 0;
   position: relative;
+  display: inline-block;
 
   span {
     position: absolute;
     filter: brightness(100%);
     background: white;
-    padding: 5px 10px;
     z-index: 1;
+    text-align: center;
+    padding: 5px 0;
     border-radius: 3px;
     top: -13px;
-    left: 5%;
+    left: 40%;
     font-size: 13px;
     border: 1px solid lightgrey;
     box-shadow: 0 3px 5px grey;
     color: rgb(58, 58, 156);
     visibility: hidden;
+    width: 0;
+    height: 27px;
+    transition: 0.3s ease;
+    overflow: hidden;
   }
 }
-
 
 .buttonholder:hover {
   span {
     visibility: visible;
+    width: 200px;
   }
 }
 
@@ -347,6 +441,10 @@ button:active {
   filter: brightness(170%);
 }
 
+.noShadow {
+  box-shadow: none;
+  opacity: 0.8;
+}
 
 * {
   box-sizing: border-box;
