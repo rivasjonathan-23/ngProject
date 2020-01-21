@@ -1,0 +1,118 @@
+img {
+  width: 150px;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  display: inline-block;
+  background: transparent;
+  //   border-radius: 2px;
+  overflow: visible;
+  box-shadow: 0 0 3px lightgrey,
+    0 1px 2px rgb(66, 66, 66);
+
+  .thead {
+    td {
+      padding: 15px;
+    }
+
+    background-image: linear-gradient(to right,
+      rgb(81, 156, 218, 0.9),
+      rgb(215, 252, 238, 0.9));
+    text-shadow: 0px 0px 5px rgb(251, 253, 255);
+    color: rgb(5, 43, 80);
+  }
+
+  td {
+    padding: 7px 15px;
+    justify-content: flex-start;
+    text-align: left;
+
+  }
+
+  tr {
+    border-bottom: 1px solid lightgrey;
+    background: white;
+  }
+}
+
+.tab {
+  position: relative;
+  display: inline-block;
+}
+
+.add {
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  font-size: 50px;
+
+  text-align: center;
+  overflow: hidden;
+  padding: 0px 20px;
+  padding-top: 0;
+  color: grey;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px grey;
+  background: white;
+  align-items: center;
+
+  span {
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+}
+
+.add:hover {
+  box-shadow: 0px 5px 10px grey;
+  //   background: rgb(238, 238, 238);
+}
+
+
+
+.container {
+  padding: 80px 50px;
+  //   background: rgb(209, 231, 238);
+  text-align: center;
+  height: 100vh;
+  font-family: "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+
+button {
+  padding: 10px 15px;
+  margin: 5px 5px;
+  border-radius: 3px;
+  color: rgb(65, 64, 64);
+  border: none;
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px rgb(88, 88, 88);
+  transition: 0.2s;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  box-shadow: 0 0 8px lightgrey, 0 3px 4px rgb(71, 71, 71);
+}
+
+button:active {
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
+}
+
+.primary {
+  color: white;
+  background: #3e5de9;
+}
+
+.danger {
+  color: white;
+  background: #e2048d;
+}

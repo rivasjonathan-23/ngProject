@@ -1,0 +1,36 @@
+<div class="container">
+  <app-updateform (response)="getResponse($event)" [editing]="editing" [toUpdate]="toUpdate" (cancelclick)="atCancel()"
+    *ngIf="add; else list"></app-updateform>
+  <div>
+
+    <ng-template #list>
+
+      <table class="tab">
+        <div class="add" (click)="add = true"><span>+</span></div>
+        <tr class="thead">
+          <td>No.</td>
+          <td>Subject</td>
+          <td>Body</td>
+          <td>suggestions</td>
+          <!-- <td>contact nfo</td> -->
+          <td>Image</td>
+          <td>Action</td>
+
+        </tr>
+        <tr *ngFor="let data of record;let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{data.subject}}</td>
+          <td>{{data.body}}</td>
+          <td>{{data.suggestions}}</td>
+          <!-- <td>{{data.contactInfo}}</td> -->
+          <td><img [src]="data.photos" alt=""></td>
+          <td>
+            <button class="danger" (click)="delete(data)">Delete</button>
+            <button class="primary" (click)="update(data)">Edit</button>
+          </td>
+
+        </tr>
+      </table>
+    </ng-template>
+  </div>
+</div>

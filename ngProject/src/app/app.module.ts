@@ -8,14 +8,25 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { FormsModule } from "@angular/forms";
 import { JrInputComponent } from "./jr-style/jr-input/jr-input.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ClientComponent } from "./components/client/client.component";
+import { HttpClientModule } from "@angular/common/http";
+import { UpdateformComponent } from './components/updateform/updateform.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     DashboardComponent,
-    JrInputComponent
+    JrInputComponent,
+    ClientComponent,
+    UpdateformComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

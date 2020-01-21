@@ -127,16 +127,16 @@
 }
 
 .formholder {
-  display: inline-block;
-
+  display: block;
+  width: 100%;
   box-sizing: border-box;
   //   border: 1px solid lightgrey;
 }
 
 .holder {
   margin: 10px 5px;
-  display: inline-block;
-  width: unset;
+  display: block;
+  width: 100%;
   box-sizing: border-box;
   padding-top: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -145,14 +145,27 @@
   .border {
     border-radius: 3px;
     padding: 1px;
-    display: inline-block;
+    display: block;
     border: 1px solid rgb(159, 165, 175);
   }
 
   input {
     padding: 8px 16px;
-    // display: block;
-    // width: 100%;
+    display: block;
+    width: 100%;
+    background: white;
+
+    font-size: 15px;
+    box-sizing: border-box;
+    border-radius: 1px;
+    border: none;
+  }
+
+  textarea {
+
+    padding: 8px 16px;
+    display: block;
+    width: 100%;
     background: white;
 
     font-size: 15px;
@@ -189,9 +202,9 @@
 }
 
 .placeholder {
-  display: block;
+  display: inline-block;
   position: absolute;
-  top: 35%;
+  top: 18px;
   left: 14px;
   color: rgb(134, 142, 156);
   transition: ease 0.4s;
@@ -249,6 +262,10 @@ input:focus {
   outline: none;
 }
 
+textarea:focus {
+  outline: none;
+}
+
 select {
   padding: 8px 16px;
   // display: block;
@@ -259,7 +276,37 @@ select {
   border: none;
 }
 
+.nice {
+  color: rgb(38, 110, 204) !important;
+  position: absolute !important;
+  top: -25px;
+  z-index: 1;
+  left: 40px;
+  box-shadow: 0 2px 5px rgb(51, 51, 51);
+  // width: 100%;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  // font-weight: lighter;
+  font-size: 19px !important;
+  // opacity: 0.8;
+  background-image: unset !important;
+  background: white;
+  // background: rgb(101, 168, 235) !important;
+  text-shadow: unset !important;
 
+  p {
+    margin: 0px 2px;
+
+    span {
+      color: white;
+      background: rgb(33, 120, 207);
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgb(87, 86, 86);
+    }
+  }
+}
 
 select:focus {
   outline: none;
@@ -293,11 +340,10 @@ form {
   overflow: hidden;
   margin: 10px;
   padding: 0;
-
   // background-image: linear-gradient(to right, rgb(206, 206, 255, 0.6), #fad5f7);
   border-radius: 3px;
-  // box-shadow: 0 0 4px rgb(136, 136, 136), 0 2px 3px rgb(58, 57, 57);
-  border: 1px solid rgb(130, 191, 231); // box-shadow: 0 0 4px rgb(136, 136, 136), 0 2px 3px rgb(58, 57, 57);
+  box-shadow: 0 0 4px rgb(136, 136, 136), 0 2px 3px rgb(58, 57, 57);
+  //   border: 1px solid rgb(130, 191, 231); // box-shadow: 0 0 4px rgb(136, 136, 136), 0 2px 3px rgb(58, 57, 57);
   // border: 1px solid lightgrey;
   box-sizing: border-box;
   display: inline-block;
@@ -391,12 +437,13 @@ button:active {
 }
 
 .pairholder {
-  display: inline-block;
+  display: inline;
   margin: 0;
   padding: 0;
 }
 
 .ageholder {
+  display: inline-block;
   width: 110px;
 }
 

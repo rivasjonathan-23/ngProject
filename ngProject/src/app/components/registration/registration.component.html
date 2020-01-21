@@ -3,7 +3,6 @@
   <div class="overlay"></div>
   <div class="divhead nice">
     <p>Angular Project <span>No. 1</span></p>
-
   </div>
 
   <div class="innercont" [ngClass]="{block: blockStyle}">
@@ -86,7 +85,7 @@
           </div>
           <br>
           <div class="buttonholder">
-            <span [hidden]="!myForm.invalid">Fill all fields to enable submit</span>
+            <span [hidden]="!myForm.valid">Fill all fields to enable submit</span>
             <!--  -->
             <button class="primary" [class.nohover]="myForm.invalid" [disabled]="myForm.invalid" type="submit">
 
