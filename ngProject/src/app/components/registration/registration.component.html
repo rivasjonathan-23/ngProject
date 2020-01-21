@@ -20,7 +20,8 @@
         <div class="innerformcont">
           <div class="pairholder">
             <div class="holder" [ngClass]="{active:focus === 1, error: validate('firstname', ['required', 'pattern'])}">
-              <label [class.filled]='myForm.controls.firstname.value'>Firstname</label>
+              <label [class.filled]='myForm.controls.firstname.value' class="label">Firstname</label>
+              <label class="placeholder" [class.filled2]='myForm.controls.firstname.value'>Firstname</label>
               <div class="border">
                 <input type="text" autocomplete="off" formControlName="firstname" (focus)="focus = 1"
                   (focusout)="focus = 0">
@@ -30,8 +31,11 @@
                 <span *ngIf="myForm.get('firstname').hasError('pattern')">Invalid input!</span>
               </span>
             </div>
+
             <div class="holder" [ngClass]="{active:focus === 2, error: validate('lastname', ['required', 'pattern'])}">
-              <label [class.filled]='myForm.controls.lastname.value'>Lastname</label>
+              <label [class.filled]='myForm.controls.lastname.value' class="label">Firstname</label>
+
+              <label [class.filled2]='myForm.controls.lastname.value' class="placeholder">Lastname</label>
               <div class="border">
                 <input type="text" autocomplete="off" formControlName="lastname" (focus)="focus = 2"
                   (focusout)="focus = 0">
@@ -44,7 +48,9 @@
           </div><br>
           <div class="pairholder">
             <div class="holder" [ngClass]="{active: focus === 3, error: validate('Email', ['required', 'pattern'])}">
-              <label [class.filled]='myForm.controls.Email.value'>Email</label>
+              <label [class.filled]='myForm.controls.Email.value' class="label">Firstname</label>
+
+              <label [class.filled2]='myForm.controls.Email.value' class="placeholder">Email</label>
               <div class="border">
                 <input type="text" autocomplete="off" [email]="true" formControlName="Email" (focus)="focus = 3"
                   (focusout)="focus = 0">
@@ -55,7 +61,9 @@
               </span>
             </div>
             <div class="holder" [ngClass]="{active:focus === 4, error: validate('gender', ['required'])}">
-              <label [class.filled]='myForm.controls.gender.value'>Gender</label>
+              <label [class.filled]='myForm.controls.gender.value' class="label">Firstname</label>
+
+              <label [class.filled2]='myForm.controls.gender.value' class="placeholder">Gender</label>
               <div class="border">
                 <select type="text" autocomplete="off" formControlName="gender" (focus)="focus = 4"
                   (focusout)="focus = 0">
@@ -66,7 +74,9 @@
               <span class="errorMessage">Required!</span>
             </div>
             <div class="holder ageholder" [ngClass]="{active:focus === 5, error: validate('age', ['required'])}">
-              <label [class.filled]='myForm.controls.age.value'>Age</label>
+              <label [class.filled]='myForm.controls.age.value' class="label">Firstname</label>
+
+              <label [class.filled2]='myForm.controls.age.value' class="placeholder">Age</label>
               <div class="border">
                 <input type="number" min="1" class="ageinput" formControlName="age" autocomplete="off"
                   (focus)="focus = 5" (focusout)="focus = 0">

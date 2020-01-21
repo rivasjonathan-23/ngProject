@@ -19,12 +19,11 @@ export class RegistrationComponent implements OnInit {
 
   temp: Array<Info>;
   constructor(private fb: FormBuilder) {
+    this.reset(new Info());
     this.record = new Array<Info>();
   }
 
-  ngOnInit() {
-    this.reset(new Info());
-  }
+  ngOnInit() {}
 
   async submit(form) {
     this.hide = true;
