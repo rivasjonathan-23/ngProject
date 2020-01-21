@@ -16,6 +16,7 @@ export class UpdateformComponent implements OnInit {
   @Output() update = new EventEmitter();
   record: Array<Record>;
   myForm: FormGroup;
+  submitted: boolean;
   report: Record;
   valid: number;
 
@@ -28,6 +29,7 @@ export class UpdateformComponent implements OnInit {
   ngOnInit() {}
 
   onsubmit(data) {
+    this.submitted = true;
     if (this.editing) {
       this.editing = false;
       this.service.updateData(this.toUpdate).subscribe(data => {

@@ -1,5 +1,5 @@
 <form [formGroup]="myForm" (submit)="onsubmit(myForm)">
-  <div class="divhead formh">Registration form
+  <div class="divhead formh">Write your concern
     <!-- <div class="fhead"></div> -->
   </div>
 
@@ -62,7 +62,7 @@
     <div class="buttonholder">
       <!-- <span [hidden]="!myForm.valid">Fill all fields to enable submit</span> -->
       <!--  -->
-      <button class="primary" [class.nohover]="myForm.invalid" [disabled]="myForm.invalid" type="submit">
+      <button class="primary" [class.nohover]="myForm.invalid || submitted" [disabled]="myForm.invalid" type="submit">
 
         Submit</button>
       <button (click)="cancel()">Cancel</button>

@@ -4,9 +4,9 @@
   <div>
 
     <ng-template #list>
-
+      <div class="add" (click)="add = true"><span>+</span></div>
       <table class="tab">
-        <div class="add" (click)="add = true"><span>+</span></div>
+
         <tr class="thead">
           <td>No.</td>
           <td>Subject</td>
@@ -17,7 +17,7 @@
           <td>Action</td>
 
         </tr>
-        <tr *ngFor="let data of record;let i = index">
+        <tr [class.even]="i % 2 != 0" *ngFor="let data of record;let i = index">
           <td>{{i + 1}}</td>
           <td>{{data.subject}}</td>
           <td>{{data.body}}</td>
@@ -26,7 +26,7 @@
           <td><img [src]="data.photos" alt=""></td>
           <td>
             <button class="danger" (click)="delete(data)">Delete</button>
-            <button class="primary" (click)="update(data)">Edit</button>
+            <button class="primary" (click)="update(data)">Update</button>
           </td>
 
         </tr>
