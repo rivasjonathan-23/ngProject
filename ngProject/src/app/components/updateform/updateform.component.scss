@@ -155,9 +155,11 @@
   }
 }
 
+
+
 .label {
   position: absolute;
-  left: 50%;
+  left: 30%;
   top: -8px;
   opacity: 0;
   // background: white;
@@ -186,23 +188,21 @@
     color: rgb(6, 2, 235);
     left: 0px;
     opacity: 1;
-    background: transparent;
-
-    visibility: hidden;
+    visibility: visible;
   }
 
   .placeholder {
     color: rgb(6, 2, 235);
-    left: 0;
-    top: -8px;
-    opacity: 1;
-    visibility: visible;
-    font-size: 14px;
+    // left: 0;
+    // top: -8px;
+    // opacity: 1;
+    // visibility: visible;
+    // font-size: 14px;
 
-    // left: 50%;
-    // opacity: 0;
-    // overflow: hidden;
-    // visibility: hidden;
+    left: 30%;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
   }
 
   .border {
@@ -219,22 +219,21 @@
   color: rgb(83, 86, 90);
   left: 0;
   opacity: 1;
-
-  visibility: hidden;
+  visibility: visible;
 }
 
 .filled2 {
-  // color: rgb(6, 2, 235);
-  // left: 60%;
-  // opacity: 0.1;
-  // overflow: hidden;
-  // visibility: hidden;
-  color: rgb(83, 86, 90);
-  font-size: 14px;
-  left: 0;
-  top: -8px;
-  opacity: 1;
-  visibility: visible;
+  color: rgb(6, 2, 235);
+  left: 30%;
+  opacity: 0.1;
+  overflow: hidden;
+  visibility: hidden;
+  // color: rgb(83, 86, 90);
+  // font-size: 14px;
+  // left: 0;
+  // top: -8px;
+  // opacity: 1;
+  // visibility: visible;
 }
 
 input:focus {

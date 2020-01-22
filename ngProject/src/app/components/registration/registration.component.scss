@@ -7,13 +7,15 @@
   padding-top: 30px;
 
   transition: 0.2s;
-  // overflow: hidden;
+  overflow: hidden;
+  opacity: 1;
   position: relative;
 }
 
 .showContent {
-  visibility: visible;
+  // visibility: visible;
   // margin-top: 0;
+  margin: 20px;
   opacity: 1 !important;
 }
 
@@ -170,7 +172,7 @@
   .errorMessage {
     visibility: hidden;
     position: absolute;
-    right: 50%;
+    right: 30%;
     bottom: -6px;
     opacity: 0.5;
     font-size: 13px;
@@ -182,7 +184,7 @@
 
 .label {
   position: absolute;
-  left: 50%;
+  left: 30%;
   top: -7px;
   opacity: 0;
   // background: white;
@@ -219,7 +221,7 @@
 
   .placeholder {
     color: rgb(6, 2, 235);
-    left: 50%;
+    left: 30%;
     opacity: 0;
     overflow: hidden;
     visibility: hidden;
@@ -239,13 +241,14 @@
   color: rgb(83, 86, 90);
   left: 0;
   // top: 0;
-  opacity: 1;
-  visibility: visible;
+
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .filled2 {
   color: rgb(6, 2, 235);
-  left: 60%;
+  left: 30%;
   opacity: 0.1;
   overflow: hidden;
   visibility: hidden;
@@ -469,5 +472,3 @@ button:active {
 option {
   border: 5px solid grey;
 }
-
-.hideContent {}

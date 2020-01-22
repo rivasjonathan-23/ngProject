@@ -14,7 +14,8 @@
     <div (click)="confirm = false" class="noticont" [class.showcont]="confirm">
       <div class="notification defnot">
         <p>
-          Are you sure you want delete this report?
+          Are you sure you <br>
+          want delete this report?
         </p>
         <button (click)="deleteItem()" class="danger">Yes</button>
         <button (click)="confirm = false">No</button>

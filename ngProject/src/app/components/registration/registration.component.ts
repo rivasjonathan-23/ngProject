@@ -16,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   hide: any = false;
   count: number;
   unsave: any = false;
-  gotData: boolean;
+  gotData: any;
 
   temp: Array<Info>;
   constructor(private fb: FormBuilder) {
@@ -25,18 +25,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.gotData = false;
-    // let count = 1;
-    // var time = setInterval(function() {
-    //   count += 1;
-    //   console.log(count);
-    //   if (count == 3) {
-    //     this.gotData = true;
-    //     console.log(this.gotData);
-    //     clearInterval(time);
-    //   }
-    // }, 1000);
-    // this.gotData = this.finish();
+    this.gotData = this.finish();
   }
 
   async submit(form) {
@@ -91,7 +80,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   timer2() {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       var count = 1;
       var time = setInterval(function() {
         count += 1;
@@ -105,8 +94,7 @@ export class RegistrationComponent implements OnInit {
 
   async finish() {
     var done: any = await this.timer2();
-    alert(done);
-    return true;
+    return "done";
   }
 
   reset(val) {

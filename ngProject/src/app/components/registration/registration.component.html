@@ -1,4 +1,4 @@
-<div class="outercont">
+<div class="outercont" [class.showContent]="gotData == 'done'">
   <img class="backdrop" src="assets/background.jpeg">
   <div class="overlay"></div>
   <div class="divhead nice">
@@ -32,7 +32,7 @@
             </div>
 
             <div class="holder" [ngClass]="{active:focus === 2, error: validate('lastname', ['required', 'pattern'])}">
-              <label [class.filled]='myForm.controls.lastname.value' class="label">Firstname</label>
+              <label [class.filled]='myForm.controls.lastname.value' class="label">Lastname</label>
 
               <label [class.filled2]='myForm.controls.lastname.value' class="placeholder">Lastname</label>
               <div class="border">
@@ -47,7 +47,7 @@
           </div><br>
           <div class="pairholder">
             <div class="holder" [ngClass]="{active: focus === 3, error: validate('Email', ['required', 'pattern'])}">
-              <label [class.filled]='myForm.controls.Email.value' class="label">Firstname</label>
+              <label [class.filled]='myForm.controls.Email.value' class="label">Email</label>
 
               <label [class.filled2]='myForm.controls.Email.value' class="placeholder">Email</label>
               <div class="border">
