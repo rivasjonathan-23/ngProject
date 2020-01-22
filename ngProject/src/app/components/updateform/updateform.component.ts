@@ -46,6 +46,7 @@ export class UpdateformComponent implements OnInit {
     this.done = await this.timer();
     this.editing = false;
     this.update.emit(this.record);
+    this.toUpdate = new Record();
   }
 
   closeNot() {
@@ -72,7 +73,6 @@ export class UpdateformComponent implements OnInit {
 
           this.done = false;
           this.finish();
-          this.toUpdate = new Record();
         }
       });
     } else {
@@ -85,7 +85,6 @@ export class UpdateformComponent implements OnInit {
         this.record = result;
         this.done = false;
         this.finish();
-        this.toUpdate = new Record();
         this.reset(new Record());
       });
     }

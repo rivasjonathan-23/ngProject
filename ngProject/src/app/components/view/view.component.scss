@@ -1,0 +1,107 @@
+.outercont {
+  text-align: center;
+  padding: 50px 0;
+
+  .divhead {
+    background: dodgerblue;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .photos {
+    width: 100%;
+    margin: 0;
+    height: auto;
+  }
+
+  .incont {
+    background: white;
+    box-shadow: 0px 0px 5px lightgrey, 0 2px 3px grey;
+    padding: 0;
+    transition: .2s;
+    display: inline-block;
+    border-radius: 2px;
+    overflow: hidden;
+    width: 500px;
+  }
+
+  .incont:hover {
+    box-shadow: 0px 0px 25px lightgrey,
+      0 5px 7px rgb(92, 92, 92);
+  }
+
+  .body {
+    font-size: 19px;
+    padding: 30px;
+    margin: 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .subject {
+    font-size: 23px;
+    display: block;
+    font-weight: lighter;
+    color: rgb(63, 70, 78);
+    margin: 0;
+    padding: 17px;
+    border-bottom: 1px solid rgb(233, 233, 233);
+    // background: rgb(194, 212, 231);
+    letter-spacing: 1px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .suggestions {
+    span {
+      color: rgb(15, 105, 196);
+    }
+
+    font-size: 17px;
+    color: rgb(12, 60, 107);
+  }
+
+
+
+}
+
+
+button {
+  padding: 10px 15px;
+  margin: 5px 5px;
+  font-size: 13px;
+  border-radius: 3px;
+  color: rgb(83, 82, 82);
+  border: none;
+  border: 1px solid rgb(160, 155, 155);
+  background-image: linear-gradient(to top, rgb(224, 221, 221), rgb(250, 248, 248));
+  box-shadow: 0 0 5px lightgrey, 0 1px 2px rgb(88, 88, 88);
+  transition: 0.2s;
+  position: relative;
+
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  filter: brightness(120%);
+  box-shadow: 0 0 8px lightgrey, 0 3px 4px rgb(71, 71, 71);
+}
+
+button:active {
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
+}
+
+.primary {
+  color: white;
+  border: 1px solid #3e5deb;
+  background-image: linear-gradient(to top, #3e5de9, #758cf3);
+}

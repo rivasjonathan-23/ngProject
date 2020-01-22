@@ -24,11 +24,19 @@
 
 
     <ng-template #list>
-      <div class="add" (click)="addNew()"><span>+</span></div>
-      <table class="tab">
+      <div class="add" (click)="addNew()">
+        <p>Add new report</p>
+        <span>+</span>
+      </div>
+      <table class="tab hideContent" [class.showContent]="gotData">
 
         <tr class="thead">
-          <td>Id</td>
+          <td colspan="6">List of concerns</td>
+
+
+        </tr>
+        <tr class="thead thead2">
+          <td>No.</td>
           <td>Subject</td>
           <td>Descriptions</td>
           <td>suggestions</td>
@@ -37,6 +45,7 @@
           <td>Action</td>
 
         </tr>
+
         <tr [class.even]="i % 2 != 0" *ngFor="let data of record;let i = index">
           <td>{{i + 1}}</td>
           <!-- <td>{{data._id}}</td> -->
@@ -45,7 +54,9 @@
           <td>{{data.suggestions}}</td>
           <!-- <td>{{data.contactInfo}}</td> -->
           <td><img [src]="data.photos" alt=""></td>
-          <td>
+          <td class="buttons">
+            <button (click)="view(data._id)" class="primary">View</button>
+
             <button class="danger" (click)="delete(data)">
               <span class="fas fa-trash-alt"></span>
               Delete</button>

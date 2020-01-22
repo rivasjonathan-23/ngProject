@@ -60,7 +60,7 @@
               </span>
             </div>
             <div class="holder" [ngClass]="{active:focus === 4, error: validate('gender', ['required'])}">
-              <label [class.filled]='myForm.controls.gender.value' class="label">Firstname</label>
+              <label [class.filled]='myForm.controls.gender.value' class="label">Gender</label>
 
               <label [class.filled2]='myForm.controls.gender.value' class="placeholder">Gender</label>
               <div class="border">
@@ -73,7 +73,7 @@
               <span class="errorMessage">Required!</span>
             </div>
             <div class="holder ageholder" [ngClass]="{active:focus === 5, error: validate('age', ['required'])}">
-              <label [class.filled]='myForm.controls.age.value' class="label">Firstname</label>
+              <label [class.filled]='myForm.controls.age.value' class="label">Age</label>
 
               <label [class.filled2]='myForm.controls.age.value' class="placeholder">Age</label>
               <div class="border">

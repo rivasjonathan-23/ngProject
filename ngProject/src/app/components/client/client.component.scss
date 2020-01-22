@@ -4,6 +4,19 @@ img {
   height: auto;
 }
 
+.hideContent {
+  margin-top: 100px;
+  height: 0;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.showContent {
+  height: unset;
+  margin-top: 0;
+  opacity: 1;
+}
+
 table {
   border-collapse: collapse;
   display: inline-block;
@@ -23,15 +36,29 @@ table {
 
     td {
       padding: 15px;
+      font-size: 20px;
       // border: none;
-      color: rgb(5, 43, 80);
+      color: rgb(255, 255, 255);
     }
 
     background-image: linear-gradient(to right,
       rgb(81, 156, 218, 0.9),
-      rgb(215, 252, 238, 0.9));
-    text-shadow: 0px 0px 5px rgb(251, 253, 255);
+      rgb(215, 252, 238, 1));
+    text-shadow: 0px 0px 5px rgb(11, 69, 126);
 
+  }
+
+  .thead2 {
+    background: rgba(237, 251, 255, 0.9);
+    border-bottom: none;
+
+    td {
+      font-size: 16px;
+
+      color: rgb(12, 72, 133) !important;
+    }
+
+    text-shadow: 0px 0px 5px rgb(202, 227, 252) !important;
   }
 
   td {
@@ -70,38 +97,202 @@ table {
   transition: 0.2s;
 
   text-align: center;
-  overflow: hidden;
-  padding: 0px 20px;
+  overflow: visible;
+  padding: 0px 22px;
   padding-top: 0;
   z-index: 1;
   color: grey;
   // border: 1px solid rgb(158, 190, 233);
   // background-image: linear-gradient(to top, rgb(192, 218, 247), white);
   border-radius: 50%;
+  // background: rgb(219, 237, 243);
+  background: white;
   box-shadow: 0px 3px 5px grey;
-  background: rgb(255, 255, 255);
   align-items: center;
 
   span {
     display: inline-block;
     padding-bottom: 8px;
   }
+
+  p {
+    position: absolute;
+    background: white;
+    color: grey;
+    opacity: 0;
+    font-size: 17px;
+    box-shadow: 0px 0px 5px grey;
+    padding: 10px;
+    height: 22px;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: 0.2s;
+    left: 0;
+    z-index: 1;
+  }
 }
 
 .add:hover {
   box-shadow: 0px 5px 10px grey;
+
+  p {
+    opacity: 0.9;
+    left: -200%;
+
+  }
+
   //   background: rgb(238, 238, 238);
 }
 
 
 
+
+
 .container {
   padding: 80px 50px;
+  background: rgb(235, 243, 247);
+  height: 100vh;
   // border: 1px solid rgb(111, 148, 173, 0.7);
   text-align: center;
-  font-family: "Segoe UI",
-    Tahoma,
-    Geneva,
-    Verdana,
+  font-family: 'Gill Sans',
+    'Gill Sans MT',
+    Calibri,
+    'Trebuchet MS',
     sans-serif;
+  ;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+button {
+  padding: 10px 9px;
+  margin: 5px 5px;
+  font-size: 13px;
+  border-radius: 3px;
+  color: rgb(83, 82, 82);
+  border: none;
+  border: 1px solid rgb(160, 155, 155);
+  background-image: linear-gradient(to top, rgb(224, 221, 221), rgb(250, 248, 248));
+  box-shadow: 0 0 5px lightgrey, 0 1px 2px rgb(88, 88, 88);
+  transition: 0.2s;
+  transition-timing-function: ease-in;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  filter: brightness(120%);
+  box-shadow: 0 0 8px lightgrey, 0 3px 4px rgb(71, 71, 71);
+}
+
+button:active {
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
+}
+
+.primary {
+  color: white;
+  border: 1px solid #3e5deb;
+  background-image: linear-gradient(to top, #3e5de9, #758cf3);
+}
+
+.danger {
+  color: white;
+  border: 1px solid #ec105a;
+  background-image: linear-gradient(to top, #e91b5f, #f57ca4);
+}
+
+
+html,
+body {
+  background: rgb(235, 243, 247);
+
+  padding: 0;
+  margin: 0;
+}
+
+.buttons {
+  width: 200px;
+}
+
+.noticont {
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background: rgba(44, 43, 43, 0.2);
+  box-sizing: border-box;
+  position: fixed;
+  text-align: center;
+  visibility: hidden;
+  //   transition: 0.1s;
+  opacity: 0;
+  z-index: 1;
+
+
+
+  .notification {
+    text-align: center;
+    padding: 10px 100px;
+    margin-top: 4%;
+    position: relative;
+    display: inline-block;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 10px;
+    padding: 20px;
+    border: 1px solid rgb(79, 170, 79);
+    color: rgb(13, 80, 13);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgb(140, 226, 140);
+    background-image: linear-gradient(to right top, rgb(228, 250, 228), white);
+    transition: .3s ease;
+
+    p {
+      padding: 10px 30px;
+    }
+
+    span {
+      position: absolute;
+      right: 5px;
+      top: 3px;
+      font-size: 15px;
+      font-family: verdana;
+      color: rgb(81, 116, 81);
+      z-index: 1;
+      padding-top: 0;
+
+      padding-bottom: 3px;
+      padding: 0px 4px;
+      border-radius: 50%;
+    }
+
+    span:hover {
+      background: rgb(72, 73, 72, .3);
+
+    }
+  }
+}
+
+.defnot {
+  background: white !important;
+  background-image: unset !important;
+  box-shadow: unset !important;
+  border: 1px solid lightgrey !important;
+  color: grey !important;
+}
+
+.showcont {
+  visibility: visible;
+  opacity: 1;
+
+  .notification {
+    margin-top: 20%;
+    font-size: 27px;
+
+    visibility: visible;
+    opacity: 1;
+  }
 }

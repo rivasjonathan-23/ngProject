@@ -11,6 +11,12 @@
   position: relative;
 }
 
+.showContent {
+  visibility: visible;
+  // margin-top: 0;
+  opacity: 1 !important;
+}
+
 .notification {
   position: absolute;
   visibility: hidden;
@@ -330,6 +336,11 @@ form {
   padding: 10px 30px;
   text-shadow: 0px 0px 5px rgb(3, 50, 88);
   color: white;
+
+  p {
+    margin: 0;
+  }
+
   // color: rgb(7, 58, 116);
 }
 
@@ -458,3 +469,5 @@ button:active {
 option {
   border: 5px solid grey;
 }
+
+.hideContent {}

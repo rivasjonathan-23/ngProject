@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Service } from "../../services/service.service";
 import { Record } from "./record";
-import { Info } from "../info";
+import { ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-client",
@@ -16,18 +17,25 @@ export class ClientComponent implements OnInit {
   toDelete: Record;
   confirm: boolean;
   done: any = true;
+  gotData: boolean;
   // record: Array;
-  constructor(private service: Service) {
+  constructor(
+    private service: Service,
+
+    private router: Router
+  ) {
     this.record = new Array<Record>();
     this.toUpdate = new Record();
     this.toDelete = new Record();
   }
 
   ngOnInit() {
+    this.gotData = false;
     this.service.getData().subscribe(data => {
       console.log(data);
       this.record = data;
       console.log(this.record);
+      this.gotData = true;
 
       // this.record = data;
     });
@@ -49,6 +57,9 @@ export class ClientComponent implements OnInit {
     this.done = await this.timer();
   }
 
+  view(id) {
+    this.router.navigate(["/view/" + id]);
+  }
   atCancel() {
     this.add = false;
     this.toUpdate = new Record();

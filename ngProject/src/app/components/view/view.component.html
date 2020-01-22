@@ -1,0 +1,22 @@
+<div class="outercont">
+  <div class="incont">
+
+    <div class="innercont">
+      <p class="subject">{{data.subject}}</p>
+
+      <img class="photos" [src]="data.photos" alt="">
+
+      <div class="body">
+
+        <p> {{data.body}}</p>
+
+        <p class="suggestions">
+          <span>suggestions:</span>
+          {{data.suggestions}}
+        </p>
+      </div>
+    </div>
+  </div><br><br><br>
+  <button class="primary" routerLink="/dashboard">Got back to dashboard</button>
+
+</div>

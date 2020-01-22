@@ -9,21 +9,25 @@ import { Result } from "./result";
 })
 export class Service {
   constructor(private http: HttpClient) {}
-  url: string = "http://localhost:3002/post";
+  url: string = "http://localhost:3002";
 
   getData(): Observable<Record[]> {
-    return this.http.get<Record[]>(this.url + "/category/testing");
+    return this.http.get<Record[]>(this.url + "/post/category/testing");
   }
 
   addData(data: Record): Observable<Record[]> {
-    return this.http.post<Record[]>("http://localhost:3002/create", data);
+    return this.http.post<Record[]>(this.url + "/create", data);
   }
 
   deleteData(id: string): Observable<Result> {
-    return this.http.delete<Result>("http://localhost:3002/delete/" + id);
+    return this.http.delete<Result>(this.url + "/delete/" + id);
   }
 
   updateData(data: Record): Observable<Result> {
-    return this.http.put<Result>("http://localhost:3002/update", data);
+    return this.http.put<Result>(this.url + "/update", data);
+  }
+
+  view(id: string): Observable<Record> {
+    return this.http.get<Record>(this.url + "/view/" + id);
   }
 }
