@@ -1,16 +1,36 @@
 <div class="container">
-  <app-updateform (response)="getResponse($event)" [editing]="editing" [toUpdate]="toUpdate" (cancelclick)="atCancel()"
-    *ngIf="add; else list"></app-updateform>
+  <app-updateform (update)="getData($event)" [editing]="editing" [record]="record" [toUpdate]="toUpdate"
+    (cancelclick)="atCancel()" *ngIf="add; else list"></app-updateform>
   <div>
+    <div (click)="done = true" class="noticont" [class.showcont]="!done">
+      <div class="notification">
+        <p>
+          Report successfully deleted
+        </p>
+        <span>x</span>
+      </div>
+    </div>
+
+    <div (click)="confirm = false" class="noticont" [class.showcont]="confirm">
+      <div class="notification defnot">
+        <p>
+          Are you sure you want delete this report?
+        </p>
+        <button (click)="deleteItem()" class="danger">Yes</button>
+        <button (click)="confirm = false">No</button>
+        <span>x</span>
+      </div>
+    </div>
+
 
     <ng-template #list>
-      <div class="add" (click)="add = true"><span>+</span></div>
+      <div class="add" (click)="addNew()"><span>+</span></div>
       <table class="tab">
 
         <tr class="thead">
-          <td>No.</td>
+          <td>Id</td>
           <td>Subject</td>
-          <td>Body</td>
+          <td>Descriptions</td>
           <td>suggestions</td>
           <!-- <td>contact nfo</td> -->
           <td>Image</td>
@@ -19,14 +39,19 @@
         </tr>
         <tr [class.even]="i % 2 != 0" *ngFor="let data of record;let i = index">
           <td>{{i + 1}}</td>
+          <!-- <td>{{data._id}}</td> -->
           <td>{{data.subject}}</td>
           <td>{{data.body}}</td>
           <td>{{data.suggestions}}</td>
           <!-- <td>{{data.contactInfo}}</td> -->
           <td><img [src]="data.photos" alt=""></td>
           <td>
-            <button class="danger" (click)="delete(data)">Delete</button>
-            <button class="primary" (click)="update(data)">Update</button>
+            <button class="danger" (click)="delete(data)">
+              <span class="fas fa-trash-alt"></span>
+              Delete</button>
+            <button class="primary" (click)="update(data)">
+              <i class="fas fa-trash-alt"></i>
+              Update</button>
           </td>
 
         </tr>

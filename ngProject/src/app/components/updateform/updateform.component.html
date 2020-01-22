@@ -2,6 +2,17 @@
   <div class="divhead formh">Write your concern
     <!-- <div class="fhead"></div> -->
   </div>
+  <div (click)="closeNot()" class="noticont" [class.showcont]="!done">
+    <div class="notification">
+      <p *ngIf="editing">
+        Report successfully updated
+      </p>
+      <p *ngIf="!editing">
+        Report successfully added!
+      </p>
+      <span>x</span>
+    </div>
+  </div>
 
   <div class="innerformcont">
     <div class="pairholder">

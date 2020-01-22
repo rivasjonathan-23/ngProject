@@ -11,42 +11,6 @@
   position: relative;
 }
 
-.notification {
-  position: absolute;
-  visibility: hidden;
-  padding: 10px 0px;
-  text-align: center;
-  top: -5%;
-  right: 10%;
-  opacity: 0;
-  width: 300px;
-  z-index: 1;
-  color: rgb(31, 93, 155);
-  box-shadow: 0px 2px 5px grey;
-  border-radius: 2px;
-  // visibility: hidden;
-  background: #cbfcdf;
-  color: rgb(11, 77, 11);
-  transition: ease 0.3s;
-  overflow: hidden;
-  height: 40px;
-
-  span {
-    position: absolute;
-    padding: 0px 5px;
-    border-radius: 20px;
-
-    top: -4px;
-    // background: white;
-    right: 0px;
-    z-index: 1;
-    opacity: 0.6;
-  }
-
-  span:hover {
-    opacity: 1;
-  }
-}
 
 .errorAlert {
   background: rgb(255, 222, 222);
@@ -210,8 +174,8 @@
   position: absolute;
   top: 18px;
   left: 14px;
-  color: rgb(134, 142, 156);
-  transition: ease 0.4s;
+  color: rgb(116, 125, 141);
+  transition: ease 0.3s;
 }
 
 .active {
@@ -224,20 +188,26 @@
     opacity: 1;
     background: transparent;
 
-    visibility: visible;
+    visibility: hidden;
   }
 
   .placeholder {
     color: rgb(6, 2, 235);
-    left: 50%;
-    opacity: 0;
-    overflow: hidden;
-    visibility: hidden;
+    left: 0;
+    top: -8px;
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+
+    // left: 50%;
+    // opacity: 0;
+    // overflow: hidden;
+    // visibility: hidden;
   }
 
   .border {
     background-image: linear-gradient(to right bottom, blue, #00ca54);
-    box-shadow: 2px 0px 4px #bef8d5, -2px 0px 4px rgba(107, 107, 255, 0.39);
+    // box-shadow: 2px 0px 4px #bef8d5, -2px 0px 4px rgba(107, 107, 255, 0.39);
   }
 
   .errorMessage {
@@ -248,17 +218,23 @@
 .filled {
   color: rgb(83, 86, 90);
   left: 0;
-  // top: 0;
   opacity: 1;
-  visibility: visible;
+
+  visibility: hidden;
 }
 
 .filled2 {
-  color: rgb(6, 2, 235);
-  left: 60%;
-  opacity: 0.1;
-  overflow: hidden;
-  visibility: hidden;
+  // color: rgb(6, 2, 235);
+  // left: 60%;
+  // opacity: 0.1;
+  // overflow: hidden;
+  // visibility: hidden;
+  color: rgb(83, 86, 90);
+  font-size: 14px;
+  left: 0;
+  top: -8px;
+  opacity: 1;
+  visibility: visible;
 }
 
 input:focus {
@@ -342,6 +318,7 @@ select:focus {
 form {
   overflow: hidden;
   margin: 10px;
+
   padding: 0;
   // background-image: linear-gradient(to right, rgb(206, 206, 255, 0.6), #fad5f7);
   border-radius: 3px;
@@ -361,7 +338,7 @@ form {
   z-index: 9999;
   // margin-right: 10px;
   // border-top-right-radius: 60px;
-  padding: 15px 30px;
+  padding: 15px 40px;
 }
 
 .divhead {
@@ -408,38 +385,7 @@ form {
   box-shadow: 0 3px 17px lightgrey, 0 5px 7px rgb(66, 66, 66);
 }
 
-button {
-  padding: 10px 15px;
-  margin: 5px 5px;
-  border-radius: 3px;
-  color: rgb(65, 64, 64);
-  border: none;
-  box-shadow: 0 0 4px lightgrey, 0 1px 2px rgb(88, 88, 88);
-  transition: 0.2s;
-  position: relative;
-}
 
-button:focus {
-  outline: none;
-}
-
-button:hover {
-  box-shadow: 0 0 8px lightgrey, 0 3px 4px rgb(71, 71, 71);
-}
-
-button:active {
-  box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
-}
-
-.primary {
-  color: white;
-  background: #3e5de9;
-}
-
-.danger {
-  color: white;
-  background: #e2048d;
-}
 
 .pairholder {
   display: inline;

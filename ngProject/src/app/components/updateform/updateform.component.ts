@@ -3,6 +3,7 @@ import { Info } from "../info";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Record } from "../client/record";
 import { Service } from "../../services/service.service";
+import { Result } from "../../services/result";
 
 @Component({
   selector: "app-updateform",
@@ -14,11 +15,12 @@ export class UpdateformComponent implements OnInit {
   @Input() editing: boolean;
   @Output() cancelclick = new EventEmitter();
   @Output() update = new EventEmitter();
-  record: Array<Record>;
+  @Input() record: Array<Record>;
   myForm: FormGroup;
   submitted: boolean;
   report: Record;
   valid: number;
+  done: any = true;
 
   constructor(private fb: FormBuilder, private service: Service) {
     this.reset(new Record());
@@ -28,24 +30,61 @@ export class UpdateformComponent implements OnInit {
 
   ngOnInit() {}
 
-  onsubmit(data) {
-    this.submitted = true;
-    if (this.editing) {
-      this.editing = false;
-      this.service.updateData(this.toUpdate).subscribe(data => {
-        console.log(data);
-        this.record = data;
+  timer() {
+    return new Promise(resolve => {
+      var count = 1;
+      var time = setInterval(function() {
+        count += 1;
+        if (count === 3) {
+          clearInterval(time);
+          resolve(true);
+        }
+      }, 2000);
+    });
+  }
+  async finish() {
+    this.done = await this.timer();
+    this.editing = false;
+    this.update.emit(this.record);
+  }
 
-        this.toUpdate = new Record();
-        this.reset(new Record());
+  closeNot() {
+    this.done = true;
+    this.editing = false;
+    this.update.emit(this.record);
+  }
+
+  async onsubmit(data) {
+    if (this.editing) {
+      this.service.updateData(this.toUpdate).subscribe(result => {
+        console.log(result);
+
+        this.submitted = true;
+
+        if (result.success) {
+          this.record.forEach(item => {
+            if (item._id == data.value._id) {
+              var index: number = this.record.indexOf(item);
+              this.record[index] = data.value;
+              this.reset(new Record());
+            }
+          });
+
+          this.done = false;
+          this.finish();
+          this.toUpdate = new Record();
+        }
       });
     } else {
       this.report = data.value;
-      console.log(this.report);
-      this.service.addData(this.report).subscribe(data => {
-        this.record = data;
+      this.service.addData(this.report).subscribe(result => {
+        console.log(result);
 
-        this.update.emit(this.record);
+        this.submitted = true;
+
+        this.record = result;
+        this.done = false;
+        this.finish();
         this.toUpdate = new Record();
         this.reset(new Record());
       });

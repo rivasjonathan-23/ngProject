@@ -1,1 +1,127 @@
 /* You can add global styles to this file, and also import other style files */
+button {
+  padding: 10px 15px;
+  margin: 5px 5px;
+  border-radius: 3px;
+  color: rgb(83, 82, 82);
+  border: none;
+  border: 1px solid rgb(214, 210, 210);
+  background-image: linear-gradient(to right top, rgb(224, 221, 221), rgb(250, 248, 248));
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px rgb(88, 88, 88);
+  transition: 0.2s;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  filter: brightness(120%);
+  box-shadow: 0 0 8px lightgrey, 0 3px 4px rgb(71, 71, 71);
+}
+
+button:active {
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
+}
+
+.primary {
+  color: white;
+  border: 1px solid #3e5deb;
+  background-image: linear-gradient(to right top, #3e5de9, #758cf3);
+}
+
+.danger {
+  color: white;
+  border: 1px solid #ec105a;
+  background-image: linear-gradient(to right top, #e91b5f, #f57ca4);
+}
+
+
+html,
+body {
+  background: rgb(235, 243, 247);
+
+  padding: 0;
+  margin: 0;
+}
+
+.noticont {
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background: rgba(44, 43, 43, 0.1);
+  box-sizing: border-box;
+  position: fixed;
+  text-align: center;
+  visibility: hidden;
+  //   transition: 0.1s;
+  opacity: 0;
+  z-index: 1;
+
+
+
+  .notification {
+    text-align: center;
+    padding: 10px 100px;
+    margin-top: 4%;
+    position: relative;
+    display: inline-block;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 27px;
+    padding: 20px;
+    border: 1px solid rgb(79, 170, 79);
+    color: rgb(13, 80, 13);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgb(140, 226, 140);
+    background-image: linear-gradient(to right top, rgb(228, 250, 228), white);
+    transition: .4s ease;
+
+    p {
+      padding: 10px 30px;
+    }
+
+    span {
+      position: absolute;
+      right: 5px;
+      top: 3px;
+      font-size: 15px;
+      font-family: verdana;
+      color: rgb(81, 116, 81);
+      z-index: 1;
+      padding-top: 0;
+
+      padding-bottom: 3px;
+      padding: 0px 4px;
+      border-radius: 50%;
+    }
+
+    span:hover {
+      color: white;
+      background: rgb(110, 180, 110);
+
+    }
+  }
+}
+
+.defnot {
+  background: white !important;
+  background-image: unset !important;
+  box-shadow: unset !important;
+  border: 1px solid lightgrey !important;
+  color: grey !important;
+}
+
+.showcont {
+  visibility: visible;
+  opacity: 1;
+
+  .notification {
+    margin-top: 20%;
+
+    visibility: visible;
+    opacity: 1;
+  }
+}
