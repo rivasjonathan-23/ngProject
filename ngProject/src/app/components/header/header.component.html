@@ -2,9 +2,10 @@
   <div class="innerhead">
     <p>Angular Activity</p>
     <ul>
-      <li routerLink="/">Home</li>
-      <li routerLink="/dashboard">Dashboard</li>
-      <li routerLink="/project">Form</li>
+      <li [class.clicked]="currentRoute == '/'" (click)="goTo('/')">Home</li>
+      <li [class.clicked]="currentRoute == '/dashboard'" (click)="goTo('/dashboard')">Dashboard</li>
+      <li [class.clicked]="currentRoute == '/project'" (click)="goTo('/project')">Form</li>
+      <li [class.clicked]="currentRoute == '/jr-material'" (click)="goTo('/jr-material')">Jr-material</li>
     </ul>
 
   </div>

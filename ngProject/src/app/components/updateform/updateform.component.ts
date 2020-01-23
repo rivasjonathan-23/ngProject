@@ -111,22 +111,8 @@ export class UpdateformComponent implements OnInit {
     this.valid = 0;
     if (this.myForm.get(value).touched) {
       validation.forEach(error => {
-        switch (error) {
-          case "required":
-            if (this.myForm.get(value).hasError(error)) {
-              this.valid++;
-            }
-            break;
-          case "pattern":
-            if (this.myForm.get(value).hasError(error)) {
-              this.valid++;
-            }
-            break;
-          case "minlength":
-            if (this.myForm.get(value).hasError(error)) {
-              this.valid++;
-            }
-            break;
+        if (this.myForm.get(value).hasError(error)) {
+          this.valid++;
         }
       });
     }

@@ -18,7 +18,7 @@
     <div class="pairholder">
       <div class="holder" [ngClass]="{active:focus === 1, error: validate('subject', ['required'])}">
         <label [class.filled]='myForm.controls.subject.value' class="label">Subject</label>
-        <label class="placeholder" [class.filled2]='myForm.controls.subject.value'>Subject</label>
+        <label class="placeholder" (click)="focus = 1" [class.filled2]='myForm.controls.subject.value'>Subject</label>
         <div class="border">
           <input type="text" autocomplete="off" formControlName="subject" [(ngModel)]="toUpdate.subject"
             (focus)="focus = 1" (focusout)="focus = 0">
@@ -30,7 +30,7 @@
       <div class="holder" [ngClass]="{active:focus === 2, error: validate('body', ['required', 'pattern'])}">
         <label [class.filled]='myForm.controls.body.value' class="label">Description</label>
 
-        <label [class.filled2]='myForm.controls.body.value' class="placeholder">Description</label>
+        <label [class.filled2]='myForm.controls.body.value' (click)="focus = 2" class="placeholder">Description</label>
         <div class="border">
           <textarea rows="4" cols="30" type="text" autocomplete="off" [(ngModel)]="toUpdate.body" formControlName="body"
             (focus)="focus = 2" (focusout)="focus = 0">
@@ -45,7 +45,8 @@
       <div class="holder" [ngClass]="{active:focus === 3, error: validate('suggestions', ['required', 'pattern'])}">
         <label [class.filled]='myForm.controls.suggestions.value' class="label">Suggestions</label>
 
-        <label [class.filled2]='myForm.controls.suggestions.value' class="placeholder">Suggestions</label>
+        <label [class.filled2]='myForm.controls.suggestions.value' (click)="focus = 3"
+          class="placeholder">Suggestions</label>
         <div class="border">
           <textarea rows="4" cols="30" type="text" [(ngModel)]="toUpdate.suggestions" autocomplete="off"
             formControlName="suggestions" (focus)="focus = 3" (focusout)="focus = 0">
@@ -58,7 +59,7 @@
       <div class="holder" [ngClass]="{active: focus === 4, error: validate('photos', ['required', 'pattern'])}">
         <label [class.filled]='myForm.controls.photos.value' class="label">Image</label>
 
-        <label [class.filled2]='myForm.controls.photos.value' class="placeholder">Image URL</label>
+        <label [class.filled2]='myForm.controls.photos.value' (click)="focus = 4" class="placeholder">Image URL</label>
         <div class="border">
           <input type="text" autocomplete="off" [(ngModel)]="toUpdate.photos" formControlName="photos"
             (focus)="focus = 4" (focusout)="focus = 0">

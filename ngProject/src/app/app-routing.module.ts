@@ -5,6 +5,7 @@ import { NotfoundComponent } from "./components/notfound/notfound.component";
 import { ViewComponent } from "./components/view/view.component";
 import { HomeComponent } from "./components/home/home.component";
 import { RegistrationComponent } from "./components/registration/registration.component";
+import { JrMaterialComponent } from "./mycomponents/jr-material/jr-material.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: "project",
     component: RegistrationComponent
+  },
+  {
+    path: "jr-material",
+    component: JrMaterialComponent
   },
   {
     path: "**",

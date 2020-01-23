@@ -1,0 +1,8 @@
+<div class="holder" [ngClass]="{active: focus}">
+  <span class="label" [ngClass]="{filled: input.value }">{{label}}</span>
+  <span class="placeholder" [ngClass]="{filled2: input.value }" (click)="focus = true">{{placeholder}}</span>
+  <div class="border">
+    <input type="text" (focus)="focus = true" autocomplete="off" [(ngModel)]="ngmodel" name="input" #input="ngModel"
+      (focusout)="focus = false">
+  </div>
+</div>

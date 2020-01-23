@@ -39,6 +39,10 @@
   }
 }
 
+.clicked {
+  filter: brightness(110%);
+}
+
 .hideContent {
   margin-top: 100px;
   height: 0;
