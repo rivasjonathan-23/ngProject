@@ -12,6 +12,7 @@ export class JrMaterialComponent implements OnInit {
   ngmodel: string;
   columns: number = 3;
   name: string;
+  off: boolean = false;
   constructor() {}
 
   ngOnInit() {}

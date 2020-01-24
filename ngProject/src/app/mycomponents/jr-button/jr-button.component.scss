@@ -1,0 +1,98 @@
+button {
+  padding: 10px 15px;
+  margin: 5px 5px;
+  border-radius: 3px;
+  color: rgb(83, 82, 82);
+  border: none;
+  border: 1px solid rgb(160, 155, 155);
+  background-image: linear-gradient(to top, rgb(224, 221, 221), rgb(250, 248, 248));
+  box-shadow: 0 0 5px lightgrey, 0 1px 2px rgb(88, 88, 88);
+  transition: 0.2s;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  filter: brightness(105%);
+  box-shadow: 0 0 8px lightgrey, 0 3px 4px rgb(71, 71, 71);
+}
+
+button:active {
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
+}
+
+.primary {
+  color: white;
+  border: 1px solid #3e5deb;
+  background-image: linear-gradient(to top, #3e5de9, #859af7);
+}
+
+.danger {
+  color: white;
+  border: 1px solid #ec105a;
+  background-image: linear-gradient(to top, #e91b5f, #f57ca4);
+}
+
+.outercont {
+  padding: 12px 25px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
+  position: relative;
+  display: inline-block;
+  margin: 30px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+outer:visited {
+  text-decoration: none !important;
+}
+
+.outercont:hover {
+  box-shadow: 0 0 10px lightgrey,
+    0 3px 5px grey;
+}
+
+.cursor {
+  height: 1px;
+  width: 1px;
+  // position: absolute;
+  background: transparent;
+  border-radius: 50%;
+  margin: 0;
+  position: absolute;
+  // border:1px solid rgba(80, 136, 156, 0.5);
+  z-index: 1;
+}
+
+.axis {
+  height: 10px;
+  // background:red;
+  transition: .1s;
+  text-align: center;
+  width: 10px;
+  overflow: visible;
+  position: absolute;
+}
+
+.clickedClass {
+  background: rgba(38, 78, 92, 0.5);
+  animation-name: clicked;
+  animation-duration: 0.9s;
+}
+
+@keyframes clicked {
+  from {
+    background: rgba(146, 151, 155, 0.7);
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(500);
+    opacity: 0;
+  }
+}

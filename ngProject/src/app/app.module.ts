@@ -18,6 +18,7 @@ import { JrMaterialComponent } from "./mycomponents/jr-material/jr-material.comp
 import { JrInputComponent } from "./mycomponents/jr-input/jr-input.component";
 import { JrCardComponent } from './mycomponents/jr-card/jr-card.component';
 import { JrContainerComponent } from './mycomponents/jr-container/jr-container.component';
+import { JrButtonComponent } from './mycomponents/jr-button/jr-button.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { JrContainerComponent } from './mycomponents/jr-container/jr-container.c
     JrInputComponent,
     JrMaterialComponent,
     JrCardComponent,
-    JrContainerComponent
+    JrContainerComponent,
+    JrButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,14 @@
-import { Component, OnInit, Input, HostListener } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 
 @Component({
-  selector: "jr-card",
-  templateUrl: "./jr-card.component.html",
-  styleUrls: ["./jr-card.component.scss"]
+  selector: "jr-button",
+  templateUrl: "./jr-button.component.html",
+  styleUrls: ["./jr-button.component.scss"]
 })
-export class JrCardComponent implements OnInit {
-  @Input() title: string;
+export class JrButtonComponent implements OnInit {
   top: string;
   left: string;
   click: any = false;
-  @Input() clickerOn: boolean = true;
   fade: boolean;
   constructor() {}
 
@@ -34,18 +32,18 @@ export class JrCardComponent implements OnInit {
   }
 
   async trigger() {
-    if (this.clickerOn) {
-      this.click = true;
-      this.click = await this.ripple();
-    }
+    this.onHover(event);
+    this.click = true;
+    this.click = await this.ripple();
   }
+
   @HostListener("click", ["$event"])
   clicked($event) {
     this.top = $event.offsetY + "px";
     this.left = $event.offsetX + "px";
   }
 
-  @HostListener("mouseover", ["$event"])
+  @HostListener("mouseover", ["$event"]) // for window scroll events
   onHover($event) {
     this.top = $event.offsetY + "px";
     this.left = $event.offsetX + "px";
