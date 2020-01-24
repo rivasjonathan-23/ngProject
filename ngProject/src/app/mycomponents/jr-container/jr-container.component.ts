@@ -10,7 +10,11 @@ export class JrContainerComponent implements OnInit {
   colnum: string = "";
   width: number;
   screen: number;
+  top:string;
+  left:string;
+  click:boolean;
   sub: any;
+  fade: boolean;
 
   constructor() {}
 
@@ -26,6 +30,15 @@ export class JrContainerComponent implements OnInit {
     this.onResize(event);
   }
 
+ 
+  @HostListener('window:scroll', ['$event']) // for window scroll events
+  onScroll($event) {
+    // console.log(window.pageYOffset);
+    if (window.pageYOffset == 0) {
+      // alert("you have reach the top")
+    }
+  }
+
   @HostListener("window:resize", ["$event"])
   onResize(event) {
     this.width = window.innerWidth;
@@ -35,6 +48,8 @@ export class JrContainerComponent implements OnInit {
       this.colnum = this.calColumns(this.columns);
     }
   }
+
+
 
   calColumns(col) {
     var tempcol: string = "";
