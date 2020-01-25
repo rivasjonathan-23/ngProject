@@ -1,7 +1,8 @@
 <div class="outercont" (mousedown)="trigger()">
-  <div class="axis" [style.top]="top" [style.left]="left">
+  <div class="axis">
     <div class="cursor" [ngClass]="{clickedClass: click}"></div>
   </div>
-
-  <ng-content></ng-content>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
 </div>

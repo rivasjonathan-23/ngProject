@@ -33,20 +33,23 @@ export class JrCardComponent implements OnInit {
     });
   }
 
-  async trigger() {
-    if (this.clickerOn) {
-      this.click = true;
-      this.click = await this.ripple();
-    }
-  }
+  // async trigger() {
+  //   if (this.clickerOn) {
+  //     this.click = true;
+  //     this.click = await this.ripple();
+  //   }
+  // }
   @HostListener("click", ["$event"])
-  clicked($event) {
+  async trigger($event) {
     this.top = $event.offsetY + "px";
     this.left = $event.offsetX + "px";
+    this.click = true;
+    this.click = await this.ripple();
   }
 
   @HostListener("mouseover", ["$event"])
-  onHover($event) {
+  onHover($event) { 
+    
     this.top = $event.offsetY + "px";
     this.left = $event.offsetX + "px";
   }

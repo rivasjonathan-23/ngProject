@@ -27,7 +27,7 @@ export class JrButtonComponent implements OnInit {
           clearInterval(time);
           resolve(false);
         }
-      }, 1000);
+      }, 500);
     });
   }
 
