@@ -166,9 +166,10 @@
   padding: 0 1px;
   overflow: hidden;
   border-radius: 2px;
+  letter-spacing: 15px;
   visibility: hidden;
   font-size: 14px;
-  transition: ease 0.4s;
+  transition: ease 0.7s;
 }
 
 .placeholder {
@@ -186,12 +187,15 @@
 
   .label {
     color: rgb(6, 2, 235);
+    letter-spacing: 0;
+
     left: 0px;
     opacity: 1;
     visibility: visible;
   }
 
   .placeholder {
+    letter-spacing: 10px;
     color: rgb(6, 2, 235);
     // left: 0;
     // top: -8px;
@@ -220,12 +224,15 @@
   left: 0;
   opacity: 1;
   visibility: visible;
+  letter-spacing: 0;
 }
 
 .filled2 {
   color: rgb(6, 2, 235);
   left: 30%;
   opacity: 0.1;
+  letter-spacing: 10px;
+
   overflow: hidden;
   visibility: hidden;
   // color: rgb(83, 86, 90);

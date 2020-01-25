@@ -28,19 +28,25 @@ button:active {
 .primary {
   color: white;
   // border: 1px solid #3e5deb;
-  background: dodgerblue;
+  background-color: rgb(29, 126, 223) !important;
 }
 
 .danger {
   color: white;
-  border: 1px solid #ec105a;
-  background-image: linear-gradient(to top, #e91b5f, #f57ca4);
+
+  background-color: #df2965 !important;
+}
+
+.success {
+  color: white;
+  background-color: rgb(28, 168, 28) !important;
 }
 
 .outercont {
   padding: 12px 15px;
   // width: 100px;
   border-radius: 3px;
+  background-color: rgb(241, 241, 241);
   box-shadow: 0 0 4px lightgrey, 0 1px 2px grey;
   position: relative;
   display: inline-block;
@@ -48,6 +54,7 @@ button:active {
   margin: 10px;
   text-decoration: none;
   text-align: center;
+  z-index: 1;
   align-content: center;
   align-items: center;
   transition: .4s;
@@ -77,8 +84,8 @@ outer:visited {
 .cursor {
   height: 1px;
   width: 1px;
-
   display: inline-block;
+  position: absolute;
   border-radius: 50%;
   margin: 25% 0;
   background: white;
@@ -105,10 +112,12 @@ outer:visited {
 }
 
 .clickedClass {
-  background: black;
-  opacity: 1;
+  background: none;
+  // border: 1px solid rgb(255, 255, 255, .7);
+  border: 1px solid white;
+  // opacity: 1;
   animation-name: clicked;
-  animation-duration: 2.5s;
+  animation-duration: 3s;
 }
 
 @keyframes clicked {
@@ -118,7 +127,7 @@ outer:visited {
   }
 
   to {
-    transform: scale(50);
+    transform: scale(100);
     opacity: 0;
   }
 }

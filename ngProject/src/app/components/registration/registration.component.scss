@@ -193,7 +193,8 @@
   border-radius: 2px;
   visibility: hidden;
   font-size: 14px;
-  transition: ease 0.4s;
+  letter-spacing: 15px;
+  transition: ease 0.7s;
 }
 
 .placeholder {
@@ -212,6 +213,8 @@
   .label {
     color: rgb(6, 2, 235);
     left: 0px;
+    letter-spacing: 0;
+
     top: -7px;
     opacity: 1;
     background: transparent;
@@ -224,6 +227,7 @@
     left: 30%;
     opacity: 0;
     overflow: hidden;
+    letter-spacing: 10px;
     visibility: hidden;
   }
 
@@ -241,6 +245,7 @@
   color: rgb(83, 86, 90);
   left: 0;
   // top: 0;
+  letter-spacing: 0;
 
   opacity: 1 !important;
   visibility: visible !important;
@@ -251,6 +256,8 @@
   left: 30%;
   opacity: 0.1;
   overflow: hidden;
+  letter-spacing: 10px;
+
   visibility: hidden;
 }
 

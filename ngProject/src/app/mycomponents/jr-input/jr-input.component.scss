@@ -1,6 +1,6 @@
 .holder {
 
-  margin: 20px 5px;
+  margin: 5px 10px;
   display: inline-block;
   //   width: 100%;
   box-sizing: border-box;
@@ -67,9 +67,10 @@
   padding: 0 1px;
   overflow: hidden;
   border-radius: 2px;
+  letter-spacing: 20px;
   visibility: hidden;
   font-size: 14px;
-  transition: ease 0.4s;
+  transition: ease 0.7s;
 }
 
 .placeholder {
@@ -89,11 +90,14 @@
     color: rgb(6, 2, 235);
     left: 0px;
     opacity: 1;
+    letter-spacing: 0;
     visibility: visible;
   }
 
   .placeholder {
     color: rgb(6, 2, 235);
+    letter-spacing: 10px;
+
     // left: 0;
     // top: -8px;
     // opacity: 1;
@@ -120,6 +124,7 @@
   color: rgb(83, 86, 90);
   left: 0;
   opacity: 1;
+  letter-spacing: 0;
   visibility: visible;
 }
 

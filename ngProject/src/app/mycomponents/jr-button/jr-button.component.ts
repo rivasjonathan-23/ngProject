@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from "@angular/core";
+import { Component, OnInit, HostListener, Input } from "@angular/core";
 
 @Component({
   selector: "jr-button",
@@ -9,6 +9,7 @@ export class JrButtonComponent implements OnInit {
   top: string;
   left: string;
   click: any = false;
+  @Input() type: string;
   fade: boolean;
   constructor() {}
 
@@ -47,5 +48,13 @@ export class JrButtonComponent implements OnInit {
   onHover($event) {
     this.top = $event.offsetY + "px";
     this.left = $event.offsetX + "px";
+  }
+
+  getType() {
+    return {
+      primary: this.type == "primary",
+      danger: this.type == "danger",
+      success: this.type == "success"
+    };
   }
 }

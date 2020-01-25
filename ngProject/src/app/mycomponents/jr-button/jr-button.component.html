@@ -1,4 +1,4 @@
-<div class="outercont" (mousedown)="trigger()">
+<div class="outercont" [ngClass]="getType()" (mousedown)="trigger()">
   <div class="axis">
     <div class="cursor" [ngClass]="{clickedClass: click}"></div>
   </div>
