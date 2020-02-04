@@ -16,9 +16,11 @@ import { HomeComponent } from "./components/home/home.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { JrMaterialComponent } from "./mycomponents/jr-material/jr-material.component";
 import { JrInputComponent } from "./mycomponents/jr-input/jr-input.component";
-import { JrCardComponent } from './mycomponents/jr-card/jr-card.component';
-import { JrContainerComponent } from './mycomponents/jr-container/jr-container.component';
-import { JrButtonComponent } from './mycomponents/jr-button/jr-button.component';
+import { JrCardComponent } from "./mycomponents/jr-card/jr-card.component";
+import { JrContainerComponent } from "./mycomponents/jr-container/jr-container.component";
+import { JrButtonComponent } from "./mycomponents/jr-button/jr-button.component";
+import { JrButton2Component } from "./mycomponents/jr-button2/jr-button2.component";
+import { JrInput2Component } from "./mycomponents/jr-input2/jr-input2.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { JrButtonComponent } from './mycomponents/jr-button/jr-button.component'
     JrMaterialComponent,
     JrCardComponent,
     JrContainerComponent,
-    JrButtonComponent
+    JrButtonComponent,
+    JrButton2Component,
+    JrInput2Component
   ],
   imports: [
     BrowserModule,

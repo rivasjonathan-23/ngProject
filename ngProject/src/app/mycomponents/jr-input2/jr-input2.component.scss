@@ -1,0 +1,103 @@
+.tiggunit {
+  box-sizing: border-box;
+  padding: 0;
+  width: 260px;
+  position: relative;
+  border-bottom: 1px solid grey;
+  //   border: 1px solid red;
+  margin: 30px 1px;
+
+  .ngalan {
+    left: 0;
+    position: absolute;
+    color: rgb(78, 77, 77);
+    bottom: -9px;
+    transition: .2s;
+  }
+
+  .sudlanan {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    border: none !important;
+    border-color: white;
+    // border-bottom: 1px solid rgb(185, 185, 185);
+    padding: 8px 0;
+
+  }
+
+  .sudlanan:focus {
+    outline: none;
+  }
+
+  .linya {
+    width: 0;
+    height: 2px;
+    display: inline-block;
+    margin: 0;
+    left: 0;
+    // position: absolute;
+  }
+
+  .l1 {
+    background: rgb(154, 30, 255);
+    transition: .3s !important
+  }
+
+  .l2 {
+    background: rgb(30, 248, 255);
+    transition: .5s !important;
+  }
+
+  .l3 {
+    background: dodgerblue;
+    transition: .9s !important;
+  }
+
+  .mgaLinya {
+    text-align: center;
+    padding: 0;
+    bottom: 12px;
+    height: 2px;
+    z-index: -1;
+    // background: rgb(250, 222, 222);
+    overflow: visible;
+    width: 100%;
+    position: absolute;
+  }
+
+  .linyaholder {
+    height: 2px;
+    background: red;
+    overflow: hidden;
+    position: absolute;
+    // bottom: 5px;
+  }
+
+
+}
+
+
+
+.active {
+  .ngalan {
+    color: dodgerblue;
+    font-size: 12px !important;
+    bottom: 18px !important;
+  }
+
+  .mgaLinya {
+    z-index: 1;
+  }
+
+  .linya {
+    width: 100% !important;
+  }
+}
+
+
+.filled {
+  color: rgb(78, 77, 77);
+  font-size: 12px !important;
+  bottom: 18px !important;
+}

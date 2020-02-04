@@ -1,0 +1,20 @@
+<div class="tiggunit" [ngClass]="{active: focus}">
+  <p class="ngalan n1" [class.filled]="sudlanan.value">{{label}}</p>
+  <input class="sudlanan" autocomplete="off" (focus)="focus = true" (focusout)="focus = false" name="sudlanan"
+    #sudlanan="ngModel" ngModel classtype="text">
+  <div class="lingyaholder">
+    <div class="mgaLinya">
+      <div class="linya l1"></div>
+    </div>
+  </div>
+  <div class="lingyaholder">
+    <div class="mgaLinya">
+      <div class="linya l2"></div>
+    </div>
+  </div>
+  <div class="lingyaholder">
+    <div class="mgaLinya">
+      <div class="linya l3"></div>
+    </div>
+  </div>
+</div>
